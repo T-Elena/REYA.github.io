@@ -1,10 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Моя сторінка</title>
+    <meta charset="UTF-8">
+    <title>Reya Melania Vicente Tyagliy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lobster', cursive;
+            background-color: #e6f4ea; /* Нежно-зелёный фон */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #d8c3a5; /* Нежный кофейный цвет */
+            padding: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 2px #8d5524;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 20px;
+        }
+        .main-photo {
+            margin: 20px auto;
+            width: 300px;
+        }
+        .main-photo img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contacts {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: inline-block;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .gallery img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 24px;
+        }
+        .flag-red { color: #c60b1e; } /* Красный цвет флага Испании */
+        .flag-yellow { color: #ffc107; } /* Жёлтый цвет флага Испании */
+    </style>
 </head>
 <body>
-    <h1>Привіт, світ!</h1>
-    <p>Це моя перша сторінка!</p>
+    <div class="header">
+        <h1>Reya Melania Vicente Tyagliy</h1>
+        <p>20.04.2024</p>
+    </div>
+
+    <div class="main-photo">
+        <img src="main-photo.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="contacts">
+        <p>País: España</p>
+        <p>Ciudad: Alicante</p>
+        <p>Teléfono de mamá: +34 612 345 678</p>
+        <p>Teléfono de papá: +34 698 765 432</p>
+    </div>
+
+    <div class="gallery">
+        <img src="photo1.jpg" onclick="openModal(this.src)">
+        <img src="photo2.jpg" onclick="openModal(this.src)">
+        <img src="photo3.jpg" onclick="openModal(this.src)">
+        <img src="photo4.jpg" onclick="openModal(this.src)">
+        <img src="photo5.jpg" onclick="openModal(this.src)">
+        <img src="photo6.jpg" onclick="openModal(this.src)">
+        <img src="photo7.jpg" onclick="openModal(this.src)">
+        <img src="photo8.jpg" onclick="openModal(this.src)">
+        <img src="photo9.jpg" onclick="openModal(this.src)">
+    </div>
+
+    <div class="modal" id="modal" onclick="closeModal()">
+        <img id="modal-img">
+    </div>
+
+    <div class="footer">
+        <p><span class="flag-red">💖</span> <span class="flag-yellow">💖</span> <span class="flag-red">💖</span></p>
+    </div>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            modal.style.display = 'flex';
+            modalImg.src = src;
+        }
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
